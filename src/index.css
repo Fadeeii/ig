@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0b0e1b;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c1021;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Space Background Canvas / Starfield overlay */
+.starfield-bg {
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.4), rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 100px 150px, rgba(192, 132, 252, 0.4), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 240px 80px, rgba(255, 255, 255, 0.3), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 320px 220px, rgba(56, 189, 248, 0.4), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 450px 120px, rgba(255, 255, 255, 0.5), rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 580px 290px, rgba(244, 114, 182, 0.3), rgba(0,0,0,0));
+  background-size: 650px 350px;
+}
+
+/* Custom Glass & Soft Card Borders */
+.space-card {
+  background-color: rgba(22, 30, 56, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+}
+
+.space-card-hover {
+  transition: all 0.25s ease-in-out;
+}
+
+.space-card-hover:hover {
+  border-color: rgba(165, 180, 252, 0.25);
+  box-shadow: 0 8px 30px -4px rgba(13, 17, 38, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Pulse Animations for Vital Indicators */
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.18); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.12); }
+}
+
+.animate-heart-beat {
+  animation: heartPulse 1.4s ease-in-out infinite;
+}
+
+/* Glow effects */
+.glow-normal {
+  box-shadow: 0 0 15px rgba(52, 211, 153, 0.2);
+}
+
+.glow-warning {
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.25);
+}
+
+.glow-critical {
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.35);
+}
